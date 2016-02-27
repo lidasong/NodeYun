@@ -1,0 +1,39 @@
+.container-fluid {
+  margin-right: 100px;
+}
+@media (max-width: 920px) {
+  .container-fluid {
+    margin-right: 0;
+  }
+}
+.segments {
+  font-size: 16px;
+  text-align: center;
+  border-bottom: 1px solid #444;
+}
+.segments ul {
+  list-style: none;
+  padding: 0;
+}
+.segments li {
+  display: inline-block;
+  padding: 2px 10px;
+}
+@media (min-width: 320px) and (max-width: 384px) {
+  .segments li {
+    padding: 2px 6px;
+  }
+}
+@media (max-width: 320px) {
+  .segments li {
+    padding: 2px 2px;
+  }
+}
+.segments a:hover,
+.segments a:focus,
+.segments a:active {
+  color: #ff4c00;
+}
+.segments .active {
+  color: #ff4c00;
+}

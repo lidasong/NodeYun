@@ -1,0 +1,107 @@
+.audio.active::after {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  content: '';
+  border-radius: 50%;
+  background: #d43f3a;
+}
+.music {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  width: 800px;
+  margin: auto;
+  padding-top: 6px;
+  box-shadow: 1px 1px 2px, -1px -1px 2px;
+}
+@media (max-width: 640px) {
+  .music {
+    width: 100%;
+  }
+  .music .music-down {
+    margin-right: 0;
+  }
+}
+.btns {
+  float: left;
+  margin-left: 20px;
+  padding: 10px;
+}
+@media (max-width: 640px) {
+  .btns {
+    margin-left: 0;
+  }
+  .btns .btn-music {
+    padding-left: 0;
+  }
+}
+.btn-music {
+  font-size: 16px;
+  margin: 0;
+  list-style: none;
+}
+.btn-music li {
+  display: inline-block;
+}
+.btn-music .btn-play {
+  display: none;
+}
+.info {
+  float: left;
+  width: 500px;
+}
+@media (max-width: 640px) {
+  .info {
+    max-width: 44%;
+  }
+}
+.info .music-name {
+  margin: 0;
+}
+.info .bar-progress {
+  position: relative;
+  height: 6px;
+  cursor: pointer;
+  background-color: #428bca;
+}
+.info .bar-played {
+  position: absolute;
+  height: 6px;
+  background: #d43f3a;
+}
+.sound {
+  position: relative;
+  float: left;
+  padding: 13px;
+}
+@media (max-width: 640px) {
+  .sound {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+}
+.sound .bar-sound {
+  position: relative;
+  bottom: 3px;
+  display: inline-block;
+  width: 40px;
+  height: 4px;
+  cursor: pointer;
+  background: #428bca;
+}
+.sound .bar-sound-val {
+  position: absolute;
+  bottom: 0;
+  width: 80%;
+  height: 4px;
+  background: #d43f3a;
+}
+.music-down {
+  font-size: 24px;
+  line-height: 46px;
+  float: right;
+  margin-right: 40px;
+}

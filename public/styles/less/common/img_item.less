@@ -1,0 +1,32 @@
+.img-container {
+    padding: 0;
+    list-style: none;
+    h2 {
+        padding: 2px;
+        font-size: 24px
+    }
+}
+
+.imgs {
+    padding: 0;
+    &:extend(.img-container);
+    li {
+        display: inline-block;
+        margin: 0 4px 4px 0;
+        position: relative;
+        &:hover .select{
+        	display: block;
+        }
+    }
+    .select {
+        display: none;
+        position: absolute;
+        top: 0;
+        margin: 0;
+        width: 16px;
+        height: 16px;
+		&:checked{
+			display: block;
+		}
+    }
+}

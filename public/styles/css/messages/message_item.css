@@ -1,0 +1,27 @@
+body {
+  font-size: 1.5em;
+}
+.msgs {
+  padding: 0;
+  list-style: none;
+}
+.msg {
+  box-shadow: 2px 1px 2px #555;
+}
+.msg:hover {
+  box-shadow: none;
+}
+.msg img {
+  width: 24px;
+}
+.msg > * {
+  vertical-align: middle;
+  padding: 10px;
+}
+.msg .text-ellipsis {
+  display: inline-block;
+  width: 120px;
+}
+.msg .fa-star-o {
+  color: #d9534f;
+}

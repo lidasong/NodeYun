@@ -1,0 +1,59 @@
+.container-fluid {
+  margin-left: 180px;
+}
+@media (max-width: 640px) {
+  .container-fluid {
+    margin-left: 0;
+  }
+}
+aside {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  padding: 20px 30px;
+  font-size: 16px;
+  background: #333;
+}
+@media (max-width: 640px) {
+  aside {
+    left: -160px;
+  }
+}
+aside ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+aside ul li {
+  padding: 4px;
+}
+aside ul .fa-video-camera {
+  margin-right: 8px;
+}
+aside ul .fa-image {
+  margin-right: 7px;
+}
+aside > ul {
+  margin-top: 62px;
+}
+aside .seperate {
+  border: 1px solid #222;
+  box-shadow: 30px 0 0 #222, -30px 0 0 #222;
+  margin: 10px 0;
+  padding: 0;
+}
+aside a:hover,
+aside a:focus,
+aside a:active {
+  text-decoration: none;
+}
+aside .fa {
+  margin-right: 10px;
+}
+aside .badge {
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+aside .content {
+  padding-left: 0;
+}

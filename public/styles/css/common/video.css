@@ -1,0 +1,34 @@
+#video {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  width: 800px;
+  height: 360px;
+  margin: auto;
+}
+@media (max-width: 920px) {
+  #video {
+    width: 100%;
+  }
+}
+#video .vjs-big-play-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  border: none;
+}
+.video-overlay {
+  position: fixed;
+  top: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: rgba(43, 51, 63, 0.75);
+}

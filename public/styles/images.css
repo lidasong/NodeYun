@@ -1,0 +1,53 @@
+
+header {
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    background-color: #252525;
+}
+
+.logo {
+    float: left;
+    width: 120px;
+    height: 40px;
+    background-image: url(../images/frame-icon.png);
+    background-position: 0 0;
+    background-repeat: no-repeat;
+}
+
+.left {
+    float: left;
+}
+
+.left ul,
+.right ul {
+    list-style: none;
+}
+
+.left li {
+    float: left;
+    line-height: 40px;
+}
+
+.left li>a {
+    font-size: 24px;
+    padding: 0 10px;
+}
+
+.left li>a:hover,
+.left li>a:focus,
+.left li>a:active,
+.right .name:hover,
+.right .name:focus,
+.right .name:active {
+    text-decoration: none;
+}
+
+.right {
+    float: right;
+    margin-right: 160px;
+}
+
+.name {
+    line-height: 40px;
+}

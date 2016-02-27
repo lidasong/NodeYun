@@ -1,0 +1,50 @@
+.file-banner {
+    padding-left: 25px;
+    @media (max-width: 384px){
+        &{
+            padding-left: 0;
+        }
+    }
+}
+
+.files {
+    margin-top: 15px;
+    padding-bottom: 60px;
+    list-style: none;
+    @media (max-width: 384px){
+        &{
+            padding-left: 15px;
+        }
+    }
+    .row {
+        padding: 8px 0;
+        transition: all linear .2s;
+        box-shadow: 2px 1px 2px #555;
+        &:hover {
+            box-shadow: none;
+        }
+        @media (max-width: 414px) {
+            .col-xs-6,.col-xs-3{
+                padding: 0;
+            }
+        }
+    }
+    .file-edit {
+        float: right;
+    }
+    .file-text {
+        display: none;
+    }
+    .select {
+        margin-right: 4px;
+    }
+    @media (max-width: 414px) {
+        .date{
+            padding:0;
+        }
+        .fa-calendar{
+            display: none;
+        }
+    }
+    
+}

@@ -1,0 +1,194 @@
+.text-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.tip-completed,
+.tip-share {
+  font-size: 24px;
+  line-height: 40px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  height: 40px;
+  margin: auto;
+  text-align: center;
+  color: #f1f1f1;
+  border-radius: 20px;
+  background: rgba(1, 1, 1, 0.4);
+  z-index: 100;
+}
+/**
+ * partials/common/scrollbar.less
+ * 页面滚动条自定义样式
+ * 注意：滚动条自定义样式目前仅支持webkit系浏览器
+ */
+::-webkit-scrollbar {
+  width: 8px;
+  -webkit-border-radius: 100px;
+  background-color: rgba(0, 0, 0, 0);
+}
+::-webkit-scrollbar:hover {
+  background-color: rgba(0, 0, 0, 0.09);
+}
+::-webkit-scrollbar-thumb:vertical {
+  border: 1px solid #4c4a48;
+  -webkit-border-radius: 100px;
+  background: rgba(0, 0, 0, 0.5);
+}
+::-webkit-scrollbar-thumb:vertical:active {
+  border: 1px solid #4c4a48;
+  -webkit-border-radius: 100px;
+  background: rgba(0, 0, 0, 0.61);
+}
+body {
+  background-color: #f1f1f1;
+  font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, Arial, sans-serif;
+}
+header {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  width: 100%;
+  padding: 10px;
+  background-color: #252525;
+}
+.logo {
+  float: left;
+  width: 120px;
+  height: 40px;
+  font-size: 36px;
+  color: #428bca;
+  text-align: center;
+}
+@media (max-width: 640px) {
+  .logo {
+    width: auto;
+  }
+}
+.logo .node {
+  position: absolute;
+  left: 54px;
+  top: 8px;
+  -webkit-transform: rotate(18deg);
+  transform: rotate(18deg);
+  color: #abd8da;
+  opacity: .6;
+}
+@media (max-width: 640px) {
+  .logo .node {
+    left: 12px;
+  }
+}
+.user-nav {
+  margin-right: 40px;
+  float: left;
+}
+@media (max-width: 414px) {
+  .user-nav {
+    margin-right: 1rem;
+  }
+}
+.left-nav {
+  float: left;
+}
+.left-nav ul {
+  list-style: none;
+}
+.left-nav li {
+  float: left;
+  line-height: 40px;
+}
+.left-nav .nav-item {
+  font-size: 2.4rem;
+  padding: 0 10px;
+}
+@media (min-width: 320px) and (max-width: 384px) {
+  .left-nav .nav-item {
+    font-size: 2rem;
+    padding-right: 0;
+  }
+}
+@media (max-width: 320px) {
+  .left-nav .nav-item {
+    font-size: 1.6rem;
+  }
+}
+@media (max-width: 640px) {
+  .left-nav > ul {
+    padding-left: 0;
+  }
+}
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+}
+.left ul,
+.right ul {
+  list-style: none;
+}
+.name {
+  line-height: 40px;
+}
+.name .text-ellipsis {
+  display: inline-block;
+  max-width: 80px;
+  vertical-align: middle;
+}
+.right {
+  float: right;
+  margin-right: 100px;
+}
+.right > .avatar img {
+  border-radius: 32%;
+}
+@media (max-width: 640px) {
+  .right {
+    margin-right: 0;
+  }
+}
+@media (max-width: 320px) {
+  .right .avatar {
+    display: none;
+  }
+}
+.fa {
+  margin-right: 4px;
+}
+.fa-ppt:before {
+  content: "\f1c4";
+}
+.fa-doc:before {
+  content: "\f1c2";
+}
+.fa-pdf:before {
+  content: "\f1c1";
+}
+.fa-audio:before {
+  content: "\f001";
+}
+.fa-video:before {
+  content: "\f03d";
+}
+.fa-others:before {
+  content: "\f15b";
+}
+.fa-folder:before {
+  content: "\f114";
+}
+form {
+  margin-top: 40px;
+}
+.submit {
+  text-align: center;
+}
+.submit .btn-primary {
+  width: 200px;
+}
+.control-label {
+  text-align: right;
+}

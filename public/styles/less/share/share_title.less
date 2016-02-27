@@ -1,0 +1,40 @@
+.container-fluid {
+    margin-right: 100px;
+    @media (max-width: 920px) {
+        & {
+            margin-right: 0;
+        }
+    }
+}
+
+.segments {
+    font-size: 16px;
+    text-align: center;
+    border-bottom: 1px solid #444;
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+    li {
+        display: inline-block;
+        padding: 2px 10px;
+        @media (min-width: 320px) and (max-width: 384px) {
+            & {
+                padding: 2px 6px;
+            }
+        }
+        @media (max-width:320px) {
+            & {
+                padding: 2px 2px;
+            }
+        }
+    }
+    a:hover,
+    a:focus,
+    a:active {
+        color: #ff4c00;
+    }
+    .active {
+        color: #ff4c00;
+    }
+}

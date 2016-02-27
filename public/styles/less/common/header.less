@@ -1,0 +1,153 @@
+body {
+    background-color: #f1f1f1;
+    font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, Arial, sans-serif;
+}
+
+header {
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    background-color: #252525;
+}
+
+.logo {
+    float: left;
+    width: 120px;
+    height: 40px;
+    font-size: 36px;
+    color: #428bca;
+    text-align: center;
+    @media (max-width: 640px) {
+        & {
+            width: auto;
+        }
+    }
+    .node {
+        position: absolute;
+        left: 54px;
+        top: 8px;
+        transform: rotate(18deg);
+        color: #abd8da;
+        opacity: .6;
+        @media (max-width: 640px) {
+            & {
+                left: 12px;
+            }
+        }
+    }
+}
+
+.user-nav {
+    margin-right: 40px;
+    float: left;
+    @media (max-width: 414px) {
+        & {
+            margin-right: 1rem;
+        }
+    }
+}
+
+.left-nav {
+    float: left;
+    ul {
+        list-style: none;
+    }
+    li {
+        float: left;
+        line-height: 40px;
+    }
+    .nav-item {
+        font-size: 2.4rem;
+        padding: 0 10px;
+        @media (min-width: 320px) and (max-width: 384px) {
+            & {
+                font-size: 2rem;
+                padding-right: 0;
+            }
+        }
+        @media (max-width: 320px) {
+            & {
+                font-size: 1.6rem;
+            }
+        }
+    }
+    @media (max-width: 640px) {
+        &>ul {
+            padding-left: 0;
+        }
+    }
+}
+
+a:hover,
+a:focus,
+a:active {
+    text-decoration: none;
+}
+
+.left,
+.right {
+    ul {
+        list-style: none;
+    }
+}
+
+.name {
+    line-height: 40px;
+    .text-ellipsis {
+        display: inline-block;
+        max-width: 80px;
+        vertical-align: middle;
+    }
+}
+
+.right {
+    float: right;
+    margin-right: 100px;
+    &>.avatar img {
+        border-radius: 32%;
+    }
+    @media (max-width: 640px) {
+        & {
+            margin-right: 0;
+        }
+    }
+    @media (max-width: 320px) {
+        & .avatar {
+            display: none;
+        }
+    }
+}
+
+.fa {
+    margin-right: 4px;
+}
+
+.fa-ppt:before {
+    content: "\f1c4";
+}
+
+.fa-doc:before {
+    content: "\f1c2";
+}
+
+.fa-pdf:before {
+    content: "\f1c1";
+}
+
+.fa-audio:before {
+    content: "\f001";
+}
+
+.fa-video:before {
+    content: "\f03d";
+}
+
+.fa-others:before {
+    content: "\f15b";
+}
+
+.fa-folder:before {
+    content: "\f114";
+}

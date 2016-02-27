@@ -1,0 +1,31 @@
+.img-container,
+.imgs {
+  padding: 0;
+  list-style: none;
+}
+.img-container h2 {
+  padding: 2px;
+  font-size: 24px;
+}
+.imgs {
+  padding: 0;
+}
+.imgs li {
+  display: inline-block;
+  margin: 0 4px 4px 0;
+  position: relative;
+}
+.imgs li:hover .select {
+  display: block;
+}
+.imgs .select {
+  display: none;
+  position: absolute;
+  top: 0;
+  margin: 0;
+  width: 16px;
+  height: 16px;
+}
+.imgs .select:checked {
+  display: block;
+}

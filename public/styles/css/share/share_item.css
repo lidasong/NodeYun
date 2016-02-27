@@ -1,0 +1,81 @@
+.share-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+.share {
+  background-color: #fff;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+.share ul {
+  list-style: none;
+  height: 80px;
+  overflow: hidden;
+}
+.share:nth-child(2n) {
+  border-left: 5px solid #f1f1f1;
+}
+.share:nth-child(2n+1) {
+  border-right: 5px solid #f1f1f1;
+}
+.share .cancel-share {
+  float: right;
+}
+.share .title {
+  padding: 4px;
+}
+@media (max-width: 990px) {
+  .share.col-sm-12 {
+    border: none;
+  }
+}
+@media (max-width: 640px) {
+  .share .contents {
+    padding-left: 1rem;
+  }
+}
+.contents .fa {
+  margin-right: 4px;
+}
+.share-info .user img {
+  vertical-align: bottom;
+  margin-right: 10px;
+}
+.share-info .comment {
+  padding-left: 10px;
+  vertical-align: 1px;
+}
+.share-info .comments {
+  margin-top: 8px;
+  font-size: 16px;
+}
+.share-time,
+.share-detail {
+  float: right;
+}
+.comment-textarea {
+  font-size: 12px;
+  display: none;
+}
+.description textarea {
+  width: 100%;
+  text-indent: 2em;
+  resize: none;
+}
+.media-left,
+.media-body {
+  vertical-align: top;
+  display: table-cell;
+}
+.media-body {
+  padding-left: 10px;
+}
+.btn-comment > .btn-primary {
+  padding: 2px 10px;
+}
+.comments .comment-list {
+  overflow: scroll;
+  margin-right: 60px;
+  padding: 0;
+}

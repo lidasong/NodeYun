@@ -1,0 +1,58 @@
+// @import "common/print";
+
+.text-ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.tip-completed {
+    font-size: 24px;
+    line-height: 40px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    height: 40px;
+    margin: auto;
+    text-align: center;
+    color: #f1f1f1;
+    border-radius: 20px;
+    background: rgba(1, 1, 1, .4);
+    z-index: 100;
+}
+
+.tip-share{
+    &:extend(.tip-completed);
+}
+
+/**
+ * partials/common/scrollbar.less
+ * 页面滚动条自定义样式
+ * 注意：滚动条自定义样式目前仅支持webkit系浏览器
+ */
+
+::-webkit-scrollbar {
+    width: 8px;
+    -webkit-border-radius: 100px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar:hover {
+    background-color: rgba(0, 0, 0, .09);
+}
+
+::-webkit-scrollbar-thumb:vertical {
+    border: 1px solid #4c4a48;
+    -webkit-border-radius: 100px;
+    background: rgba(0, 0, 0, .5);
+}
+
+::-webkit-scrollbar-thumb:vertical:active {
+    border: 1px solid #4c4a48;
+    -webkit-border-radius: 100px;
+    background: rgba(0, 0, 0, .61);
+}
+

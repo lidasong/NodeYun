@@ -1,0 +1,50 @@
+.file-banner {
+  padding-left: 25px;
+}
+@media (max-width: 384px) {
+  .file-banner {
+    padding-left: 0;
+  }
+}
+.files {
+  margin-top: 15px;
+  padding-bottom: 60px;
+  list-style: none;
+}
+@media (max-width: 384px) {
+  .files {
+    padding-left: 15px;
+  }
+}
+.files .row {
+  padding: 8px 0;
+  -webkit-transition: all linear .2s;
+  transition: all linear .2s;
+  box-shadow: 2px 1px 2px #555;
+}
+.files .row:hover {
+  box-shadow: none;
+}
+@media (max-width: 414px) {
+  .files .row .col-xs-6,
+  .files .row .col-xs-3 {
+    padding: 0;
+  }
+}
+.files .file-edit {
+  float: right;
+}
+.files .file-text {
+  display: none;
+}
+.files .select {
+  margin-right: 4px;
+}
+@media (max-width: 414px) {
+  .files .date {
+    padding: 0;
+  }
+  .files .fa-calendar {
+    display: none;
+  }
+}

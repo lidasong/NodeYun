@@ -1,0 +1,79 @@
+@import 'common/base';
+@import 'common/header';
+.resource {
+    padding-left: 16px;
+    @media (max-width: 384px){
+        &{
+            padding-left: 0;
+        }
+    }
+    .breadcrumb {
+        padding-left: 0;
+        background-color: transparent;
+    }
+}
+
+.author .text-time {
+    float: none;
+}
+
+.text-time {
+    float: right;
+    padding-left: 40px;
+}
+
+.description {
+    margin-top: 20px;
+    span {
+        font-weight: bold;
+    }
+}
+
+.answer {
+    margin-top: 40px;
+    .submit {
+        text-align: right;
+    }
+    .btn-primary {
+        width: 200px;
+    }
+}
+
+.answer-list {
+    ul {
+        padding: 16px;
+        list-style: none;
+        @media (max-width: 384px){
+            &{
+                padding-left: 0;
+            }
+        }
+    }
+    .answer-item {
+        padding: 10px 0;
+        border-top: 1px solid;
+    }
+}
+
+.content {
+    padding: 4px 0;
+    white-space: pre-wrap;
+    img {
+        max-width: 100px;
+        cursor: zoom-in;
+    }
+    ul,
+    ol {
+        display: table;
+        /* 调教webkit*/
+        width: 100%;
+        padding: 0;
+        padding-left: 2em;
+        word-spacing: -1em;
+        li {
+            display: inline-block;
+            width:100%;
+            word-spacing: 0;
+        }
+    }
+}
