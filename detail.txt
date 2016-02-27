@@ -1,0 +1,61 @@
+基于NodeJS与云存储的文件管理平台的设计与实现
+
+登录功能:
+sign_in:{
+	direct:'home',
+	render:'sign_in'
+}
+注册功能：
+sign_up:{
+	render:'sign_up',
+	create:['username','email','password(md5)']
+}
+忘记密码：
+forget:{
+	render:'forget',
+	email:['username','password']
+}
+
+首页：
+home:{
+	render:'home',
+	data:['message','shares','user'],
+	page:'share/:page_num'
+}
+用户页：
+user:{
+	render:'user',
+	data:['session.user'||'user'],
+	put:'user/:id',
+	data:['user info']
+}
+
+文档预览：
+preview:{
+	render:'preview',
+	data:['upload info'],
+	put:'/preview/:id',
+	data:'object info',
+	download:'request download'
+}
+
+文件上传：
+upload:{
+	render:'upload',
+	data:['files']
+}
+
+内容分类：
+content:{
+	render:['images','docs','audios','videos','others','all']
+	data:'type object'
+}
+
+内容分享：
+share:{
+	render:'share',
+	data:'particular share info',
+	folderData:'Array Children'
+}
+
+insert into upload values(1451397587935, 5, '', 1451793192726 ,'8.双向数据流.mp4', 0, 0, 1, '2015-12-29 22:01:47', '2015-12-29 22:01:47', '', 'sample', 140611210, '', 'video/mp4', '1451397587935/8.双向数据流.mp4','','');
