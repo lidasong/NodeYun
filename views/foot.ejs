@@ -1,0 +1,7 @@
+	<% var production = false; %>
+	<% if(!production){%>
+    	<script src="/public/scripts/require-config.js"></script>
+	<% } %>
+	<script src="/public/scripts/require.js" data-main="/public/scripts/<%= production?'production/':'main/' %><%= main %>.js"></script>
+  </body>
+</html>

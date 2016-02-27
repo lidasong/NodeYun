@@ -1,0 +1,12 @@
+<% comments.forEach(function(comment){ %>
+	<li class="media">
+	  <div class="media-left">
+	    <a href="/user/<%= comment.user_id %>">
+	      <img class="media-object" src="<%= comment.s_avatar %>" width=20 height=20 alt="avatar">
+	    </a>
+	  </div>
+	  <div class="media-body">
+	    <%= comment.comment %>
+	  </div>
+	</li>
+<% }); %>

@@ -1,0 +1,83 @@
+<% var title = 'PC-毕业答辩',styles=['/public/styles/css/libs/reveal.css','/public/styles/css/libs/reveal-theme.css','/public/styles/css/pc.css']; %>
+<% include head %>
+    <div class="reveal">
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides">
+            <section>
+                <h2 style="line-height:1.2;text-transform:none;">与实现基于NodeJS与云存储的文件管理平台的设计</h2>
+                <p class="mt-40">李大松</p>
+                <time class="mt-40">
+                	2016/5/15
+                </time>
+            </section>
+            <section>
+                <h2 style="margin-left:-500px;" >提纲</h2>
+                <ol>
+                    <li class="fragment">
+                        研究背景
+                    </li>
+                    <li class="fragment mt-20">
+                    	研究目的
+                    </li>
+                    <li class="fragment mt-20">
+                    	研究内容
+                    </li>
+                    <li class="fragment mt-20">
+                    	技术方案
+                    </li>
+                    <li class="fragment mt-20">
+                    	Q&A
+                    </li>
+                </ol>
+            </section>
+            <section>
+                <h2>研究背景</h2>
+                <ul>
+                    <li class="mt-20">数据来源：新浪NBA数据库、各大体育新闻网页</li>
+                    <li class="mt-20">抓取语言：python</li>
+                    <li class="mt-20">预测工具：scikit-learn开源库</li>
+                </ul>
+            </section>
+            <section id="transitions">
+                <h2>研究目的</h2>
+                <ul>
+                    <li class="fragment mt-20">球员权值：每个球员的实力赋予一个权值，系统初始化时，分给每个球员一个初始权值。每场比赛根据比赛表现，算出一个表现权值，表现差，表现权值为负值，那么球员的权值就降低，表现好，球员权值就升高。表现权值得出根据球员的上场时间，二分、三分、罚球命中率、篮板、助攻、抢断、盖帽、失误、场均得分 综合得出，经过一段时间的训练，球员权值基本就和他的能力匹配。
+                    </li>
+                    <li class="fragment mt-20">球员是否上场？上场为1，不能上场为0
+                    </li>
+                    <li class="fragment mt-20">球队和谐程度：最高为1，极其和谐，最小为0，极度不和谐
+                    </li>
+                    <li class="fragment mt-20">球队权值：根据球员的权值、上场情况和球队和谐程度得出
+                    </li>
+                </ul>
+            </section>
+            <section data-background="#007777">
+                <h2>研究内容</h2>
+                <ul>
+                    <li class="fragment mt-20"><img src="/public/images/phone.png" alt="手机实现图"></li>
+                    <li class="fragment mt-20"><img src="/public/images/pad.png" alt="手机实现图"></li>
+                    <li class="fragment mt-20"><img src="/public/images/pc.png" alt="手机实现图"></li>
+                </ul>
+            </section>
+            <section data-transition="linear" data-background="#007777" data-background-transition="slide">
+                <h2>技术方案</h2>
+                <p>
+                    每一个样本包括主队权值、客队权值、主队场均得分、主队场均限制对手得分、客队场均得分、客队场均限制对手得分、主队主场战绩、客队客场战绩、主队主场近10场战绩、客队客场近10场战绩、主队近两场比赛强度、客队近两场比赛强度
+                </p>
+            </section>
+            <section data-transition="linear" data-background="#007777" data-background-transition="slide">
+                <h2>Q&A</h2>
+                <ul>
+                    <li class="mt-20">胜负：主队获胜为1，失败为0</li>
+                    <li class="mt-20">主队得分预测、客队得分预测：推出胜分差、大小分、让分胜负</li>
+                </ul>
+            </section>
+            <section data-background="#007777">
+                <h2>Thank You</h2>
+            </section>
+        </div>
+    </div>
+
+<% var main='pc' %>
+
+<% include foot %>

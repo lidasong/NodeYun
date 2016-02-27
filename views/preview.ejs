@@ -1,0 +1,30 @@
+<% var title = '云-预览',
+styles=['/public/styles/css/preview.css'] %>
+<% include head %>
+<% include templates/header %>
+<div class="container-fluid">
+	<% if(data.type==1){%>
+		<aside id="ppt-thumbnail">
+			<%# include templates/preview/side %>
+		</aside>
+	<%}%>
+	<div class="wrapper <%= data.type==1?'translate-x':''%>">
+		<h1 class="file-name text-ellipsis">
+			<span><%= data.file_name %></span>
+			<a href="javascript:void(0)" class="btn btn-download"><i class="fa fa-download fa-lg"></i>下载</a>
+		</h1>
+	    <div class="<%= data.type==1?'ppt':'doc'%>" id="<%= data.type==1?'ppt':'doc'%>"></div>
+	</div>
+	<div class="preview-data">
+		<input type="text" class="hide" id="type" value="<%= data.type%>">
+		<input id="cloud_url" class="hide" type="text" value = "<%= data.cloud_url %>">
+		<input id="key_original" class="hide" type="text" value = "<%= data.key_original %>">
+	</div>
+
+    <% include templates/spinner %>
+	
+</div>
+
+<% var main= data.type==1 ? 'previewPPT':'previewPDF' %>
+
+<% include foot %>

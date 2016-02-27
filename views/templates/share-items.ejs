@@ -1,0 +1,38 @@
+<ul class="share-list row">
+  <% shares.forEach(function(item){ %>
+    <% var types = {
+    	0:'image',
+    	1:'ppt',
+    	2:'doc',
+    	3:'pdf',
+    	4:'audio',
+    	5:'video',
+    	6:'others',
+    	7:'folder'
+    } %>
+    <li class="share col-md-6 col-sm-12" data-sId="<%= item.s_id %>">
+    	<h3 class="title"><%= item.shares.length %>个文档</h3>
+    	<ul class="contents">
+    		<% item.shares.forEach(function(share){
+    			if(share.is_dir==1){%>
+    			<li class="text-ellipsis"><a href="/share/<%= share.s_id %>"><i class="fa fa-<%= types[share.type]%>"></i><%= share.file_name %></a></li>
+    		<%}else{%>
+    			<li class="text-ellipsis">
+    				<a href="javascript:void(0)" data-type=<%= types[share.type]%>>
+    					<i class="fa fa-<%= types[share.type]%>"></i><%= share.file_name %>
+    				</a>
+    			</li>
+    		<%}}) %>
+    	</ul>
+    	<div class="share-info">
+    		<div class="user"><a href="/user/<%= item.user_id%>"><img src="<%= item.s_avatar %>" width=20 height=20 alt="user avatar"><%= item.username %></a>
+    			<div class="share-time"><%= new Date(item.share_time).toLocaleDateString() %></div>
+    		</div>
+    		<div class="comments">
+    			<a href="javascript:void(0)" class="like" data-like="<%= item.is_like %>"><i class="fa <%= item.is_like ? 'fa-heart':'fa-heart-o' %>"></i><a href="javascript:void(0)" class="comment"><i class="fa fa-comment"></i></a></a>
+    			<a href="/share/<%= item.s_id %>" class="share-detail">详情</a>
+    		</div>
+    	</div>
+    </li>
+  <% })%>
+</ul>

@@ -1,0 +1,46 @@
+<% var title = '云-社区详情',
+	styles=['/public/styles/css/libs/markitup.css',
+		'/public/styles/css/libs/markitupset.css',
+		'/public/styles/css/community_detail.css'
+]; %>
+<% include head %>
+
+<% include templates/header %>
+
+<div class="container">
+	<input type="hidden" id="com-id" value="<%= comId %>">
+	<input type="hidden" id="username" value="<%= sessionUser.username %>">
+	<div class="resource">
+		<ol class="breadcrumb">
+	        <li><a href="/community/demand">求取资源</a></li>
+	        <li class="active">资源详情</li>
+	    </ol>
+		<h1 class="h3 title"><a href="/community/<%= community.com_id %>"><%- decodeURIComponent(community.title) %></a></h1>
+		<div class="author">
+	        <a href="/user/<%= community.user_id %>"><img src="<%= community.s_avatar %>" alt="avatar" width=40 height=40><strong><%= community.username %></strong></a>
+	        <strong class="text-time"><%= new Date(community.mod_time).toLocaleDateString() %></strong>
+	    </div>
+	    <div class="description">
+	    	<span>描述: </span><%- decodeURIComponent(community.description) %>
+	    </div>
+	</div>
+	<div class="answer-list">
+		<ul>
+			<% answers.forEach(function(answer){ %>
+				<% include templates/answer %>
+			<% }) %>
+		</ul>
+	</div>
+	<form action="/community/<%= community.com_id %>" method="post" class="answer">
+		<div class="form-group">
+			<textarea id="markItUp" class="form-control" cols="80" rows="6" name="comment" required></textarea>
+		</div>
+		<div class="form-group submit">
+		    <input type="submit" class="btn btn-primary form-control" id="submit" value="提交">
+		</div>
+	</form>
+</div>
+<% var main='community_detail' %>
+
+<% include foot %>
+

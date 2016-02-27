@@ -1,0 +1,23 @@
+<li class="community">
+	<div class="info col-md-10 text-ellipsis">
+	    <a href="/user/<%= community.user_id %>">
+			<img src="<%= community.s_avatar %>" alt="avatar" width=40 height=40>
+	    </a>
+		<a href="/community/<%= community.com_id %>" class="title">
+			<%- decodeURIComponent(community.title) %>
+		</a>
+		<a href="javascript:void(0);" class="type"><%= community.type %></a>
+	</div>
+	<div class="time col-md-2"><%= new Date(community.mod_time).toLocaleDateString() %></div>
+    <div class="answers">
+        <small>回答</small>
+        <span class="text-ellipsis">
+        	<% var current;
+	        	current = answerCount.filter(function(item){ 
+	        		return item.community_id == community.com_id;
+	        	});
+	        %>
+        	<%= current.length ? current[0].counts : 0 %>
+        </span>
+    </div>
+</li>

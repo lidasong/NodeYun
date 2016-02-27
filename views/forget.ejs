@@ -1,0 +1,51 @@
+<% var title = '云-忘记密码',styles = ['/public/styles/css/sign.css']; %>
+<% include head %>
+<% include templates/header %>
+    
+<div class="container">
+    <hgroup>
+        <h1>NodeYun</h1>
+        <h3>在线文件管理平台</h3>
+    </hgroup>
+    <div class="sign_in">
+        <div class="tip">
+            <a href="sign_in">登录</a>
+            <b>.</b>
+            <a href="sign_up">注册</a>
+        </div>
+    </div>
+    <form action="/forget" method="post" id="sign">
+        
+        <% if(resetKey){%>
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="fa fa-unlock"></i>
+                </span>
+                <input type="password" class="form-control" name="password" id="password"  required="required" placeholder="password">
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="fa fa-lock"></i>
+                </span>
+                <input type="password" class="form-control" name="confirm" id="confirm"  required="required" placeholder="confirm">
+            </div>
+            <div class="input-group">
+                <input type="text" class="form-control hidden" name="key" id="key"  required="required" value="<%= resetKey %>">
+            </div>
+        <% }else{ %>
+            <span class="tip-error">邮箱格式不正确O(∩_∩)O~</span>
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="fa fa-envelope"></i>
+                </span>
+                <input type="email" class="form-control" name="email" id="email"  required="required" placeholder="email">
+            </div>
+        <% } %>
+        <div class="input-group submit">
+            <button name="button" type="submit" class="btn btn-default btn-submit"><%= resetKey?'重置密码' : '发送邮件' %></button>
+        </div>
+    </form>
+    <div class="msg"></div>
+</div>
+<% var main='forget' %>
+<% include foot %>

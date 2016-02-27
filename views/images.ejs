@@ -1,0 +1,29 @@
+<% 	var title="云-图片",
+		styles = ['/public/styles/css/images.css']
+%>
+<% include head %>
+
+<% include templates/iviewer %>
+
+<% include templates/header %>
+
+<% include templates/side %>
+<div class="container-fluid">
+	<!-- <h1>时间轴</h1> -->
+	<input type="hidden" id="cloud-url" value="<%= cloudUrl %>">
+	<div class="file-banner">
+		<a href="javascript:void(0)" class="btn btn-primary btn-download"><i class="fa fa-download fa-lg"></i>下载</a>
+		<a href="javascript:void(0)" class="btn btn-primary btn-delete"><i class="fa fa-remove fa-lg"></i>删除</a>
+		<a href="javascript:void(0)" class="btn btn-primary btn-share"><i class="fa fa-share-alt fa-lg"></i>分享</a>
+	</div>
+	<ul class="img-container files">
+		<% for(var time in images){ %>
+			<% include templates/img_item %>
+		<% } %>
+	</ul>
+	<div class="tip-completed">已经加载完</div>	
+	<div class="tip-share"></div>	
+</div>
+<% var main = 'images' %>
+
+<% include foot %>

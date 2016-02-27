@@ -1,0 +1,15 @@
+<% followMsg.forEach(function(msg){ %>
+  <li class="msg <%= msg.is_read==0 ? 'reading' : '' %>" data-m_id = "<%= msg.m_id %>" >
+	  <a href="user/<%= msg.sender_id %>" class="text-ellipsis">
+	  	<img src="<%= msg.s_avatar %>" alt="头像">
+	  	<%= msg.username %>
+	  </a>
+	  <span><%= msgTypes[msg.type] %></span>	
+	  <% if(msg.data){%>
+	  	<a href="<%= msg.data %>"><i class="fa fa-link"></i></a>
+	  <% } %>
+	  <% if(msg.is_read==0){ %>
+	  	<a href="javascript:void(0)"><i class="fa fa-star-o"></i></a>	
+	  <% } %>
+  </li>
+<% }) %>

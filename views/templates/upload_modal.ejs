@@ -1,0 +1,47 @@
+<%
+	var typeAccepts = {
+		images:['image/*'],
+		docs:[
+			'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+	    	'application/msword',
+	    	'text/plain',
+	    	'application/vnd.ms-powerpoint',
+	    	'application/vnd.openxmlformats-officedocument.presentationml.presentation',
+	    	'application/pdf'
+    	],
+		audios:[
+			'audio/mpeg',
+    		'audio/midi'
+    	],
+		videos:[
+			'video/mp4', 
+	    	'video/webm',
+	    	'video/ogg'
+    	],
+    	all:[],
+    	others:[]
+	};
+ %>
+<div class="modal fade" id="upload-file" tabindex="-1" role="dialog" aria-labelledby="upload-file" style="display: none;">
+    <input type="hidden" id="parent-id" name="parent_id" value="<%= parentId %>">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="title">文件上传区域</span>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="fa fa-close"  aria-hidden="true"></i></button>
+            </div>
+            <div class="modal-body">
+                <a href="javascript:void(0)" class="btn btn-default" id="pickfiles" title="上传">
+                    <img class="upload" src="/public/images/upload.png" alt="上传按钮">
+                </a>
+                <div class="file-err"></div>
+                <div class="transform-spinner">
+                    <div class="cube1"></div>
+                    <div class="cube2"></div>
+                </div>
+                <div class="progress"></div>
+                <div class="tip-error">同步数据出错啦╮(╯▽╰)╭</div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<% var title = '云-上传',styles=['/public/styles/css/upload.css']; %>
+<% include head %>
+<% include templates/header %>
+<div class="container" id="upload-file">
+<input type="hidden" id="cloud-url" value="http://7xoszw.com1.z0.glb.clouddn.com/">
+<a href="" class="btn btn-default" id="pickfiles">上传</a>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <div class="file">
+            <img src="/public/images/upload.png" alt="上传按钮">
+            <input class="upload-file" type="file" name="files" title="上传文件" multiple>
+        </div>
+        <div class="submit">
+            <input type="submit" id="submit" class="btn btn-default" value="上传文件" />
+        </div>
+    </form>
+    <div class="progress"></div>
+   <div class="transform-spinner">
+     <div class="cube1"></div>
+     <div class="cube2"></div>
+   </div>
+</div>
+<% var main = 'upload' %>
+<% include foot %>

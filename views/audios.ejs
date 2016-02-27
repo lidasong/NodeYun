@@ -1,0 +1,23 @@
+<% var title = '云-音乐',styles=['/public/styles/css/audios.css']%>
+
+<% include head %>
+<% include templates/header %>
+<% include templates/side %>
+<div class="container-fluid">
+	<input type="hidden" id="cloud-url" value="<%= cloudUrl %>">
+
+	<% include templates/banner %>
+	<% include templates/upload_modal %>
+	<ul class="files">
+		<% include templates/file_banner %>
+		
+		<% audios.forEach(function(file,index){ %>
+			<% include templates/file_item %>
+		<% });%>
+	</ul>
+	<% include templates/audio_bar %>
+	<div class="tip-completed">已经加载完</div>
+	<div class="tip-share"></div>
+</div>
+<% var main='audios' %>
+<% include foot %>

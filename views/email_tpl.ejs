@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>找回密码</title>
+</head>
+
+<body>
+   
+    <div style="font-size: 13px;padding:40px;background-color: #F7F7F7;font-family:Arial, Helvetica, sans-serif; color:#333;">
+        <div class="mailcontentbox" style="min-width: 500px;max-width: 750px;">
+            <div style="background-color: #333;">
+                <h3 style="margin:0;padding:10px;font-size:20px;">
+                    <a href="http://nodeYun.site" target="_blank" style="text-decoration:none;color:#f1f1f1;">
+                        nodeYun
+                    </a>
+                </h3>
+            </div>
+            <div style="border-width:0px 1px 2px 1px;border-style:solid;border-color:#D7D7D7;border-bottom-color:#333;padding:20px;background:#fff;">
+                <p style="line-height:20px;padding-bottom:5px;">
+                    您好 <%= username %>,
+                </p>
+                <p style="line-height:20px;padding-bottom:5px;">
+                    您发送了重置NodeYun密码的申请。 </p>
+                <p style="line-height:20px;padding-bottom:5px;">
+                    请点击下边的链接进行确认，之后您将可以设置一个新密码。 </p>
+                <p style="line-height:20px;padding-bottom:5px;">
+                    <a href="http://localhost:3000/reset?resetKey=<%= resetKey %>" target="_blank" style="color:#36C;">http://nodeyun.site/reset?resetKey=<%= resetKey %></a>
+                </p>
+                <p style="line-height:13px; margin: 40px 0px 10px">
+                    感谢您使用NodeYun </p>
+                <p style="padding-bottom:5px; padding-top:0px; margin-top:0px">
+                    NodeYun Team
+                </p>
+            </div>
+            <div style="color:#777;padding: 15px;">
+                ©2016 NodeYun Team.
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

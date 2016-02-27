@@ -1,0 +1,19 @@
+<li class="follow col-md-4" data-fid="<%= follow.user_id %>">
+	<div class="user">
+		<a href="/user/<%= follow.user_id %>">
+			<img src="<%= follow.s_avatar %>" alt="avatar">
+		</a>
+		<a href="/user/<%= follow.user_id %>">
+			<span><%= follow.username %></span>
+		</a>
+		<% if(follow.followed){%>
+			<a href="javascript:void(0)" class="btn-follow btn btn-default" data-follow="1"><span>取消关注</span></a>
+		<% }else{ %>
+			<a href="javascript:void(0)" class="btn-follow btn btn-default" data-follow="0" <%= follow.user_id == sessionUser.user_id?"disabled":"" %> >
+			<span>关注</span></a>
+		<%} %>
+		<p class="user-intro text-ellipsis">
+			<%= follow.user_intro %>
+		</p>
+	</div>
+</li>

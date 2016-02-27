@@ -1,0 +1,23 @@
+<% var title = '云-错',
+	styles=['/public/styles/css/error.css'],
+	errMsg = errMsg || '';
+ %>
+<% include head %>
+
+<div class="container-fluid">
+	<div class="controller">
+	    <div class="objects">
+	        <div class="text-area rotate">
+	            <p class="error"><%= errMsg?errMsg :'Error 404' %></p>
+	            <p class="details">There was a problem
+	                <br />
+	                <br />The page you are looking for is not here or moved.</p>
+	        </div>
+	        <div class="homepage rotate">
+	            <a href="/home">Back to homepage</a>
+	        </div>
+	    </div>
+	</div>
+</div>
+<% var main = 'error' %>
+<% include foot %>

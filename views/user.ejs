@@ -1,0 +1,47 @@
+<% var title = "云-用户",
+	styles=['/public/styles/css/user.css'];
+%>
+
+<% include head %>
+
+<% include templates/iviewer %>
+
+<% include templates/header %>
+<div class="container">
+	<input type="hidden" id="cloud-url" value="<%= cloudUrl %>">
+	
+	<% include templates/user_info %>
+	<div class="contents shares">
+		<% switch(type){
+			case 'share': %>
+			<ul class="share-list row files">
+			  <% shares.forEach(function(item){ %>
+			    <% include templates/share-item %>
+			  <% })%>
+			</ul>
+		<% break;
+			case 'follower': %>
+			<ul class="follows row">
+				<% follows.forEach(function(follow){ %>
+						<% include templates/follow %>
+				<% }); %>
+			</ul>
+		<% break;
+		case 'following': %>
+			<ul class="follows row">
+				<% follows.forEach(function(follow){ %>
+						<% include templates/follow %>
+				<% }); %>
+			</ul>
+		<% break;} %>	
+	</div>
+	<% include templates/audio_bar %>
+
+	<% include templates/video %>
+</div>
+<div class="spinner-container">
+	<% include templates/spinner %>
+</div>
+<% var main = 'user' %>
+	
+<% include foot %>

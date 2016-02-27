@@ -1,0 +1,13 @@
+<% var thumbnails = imgs.map(function(img,index){
+    return "http://7xoszw.com1.z0.glb.clouddn.com/"+img.key_original;        
+}); %>
+<ol class="thumbnails" style="left:<%= (thumbnails.length*84-84)/2 + 'px' %>" data-target="<%= 0 %>">
+    <% thumbnails.forEach(function(thumbnail,index){
+    	var thumbSrc = thumbnail + '?imageView2/1/w/80/h/80';
+    %>
+        <li class="thumbnail" data-src="<%= thumbnail %>">
+            <a href="javascript:void(0);"><img src="<%= thumbSrc %>" alt=""></a>
+        </li>
+        <%# include img_thumbnail %>
+    <% }); %>
+</ol>

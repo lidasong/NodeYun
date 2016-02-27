@@ -1,0 +1,50 @@
+<% var types = {
+	0:'image',
+	1:'ppt',
+	2:'doc',
+	3:'pdf',
+	4:'audio',
+	5:'video',
+	6:'others',
+	7:'folder'
+} %>
+<li class="share col-md-6 col-sm-12" data-sId="<%= item.s_id %>">
+	<div class="title">
+		<a href="/share/<%= item.s_id %>"><i class="fa fa-file-o"></i><%= item.shares.length %>个文件</a>
+		<% if(sessionUser.user_id == item.user_id){%>
+			<a href="javascript:void(0);" class="cancel-share" title="取消分享"><i class="fa fa-star"></i></a>
+		<% } %>
+	</div>
+	<ul class="contents">
+		<% item.shares.forEach(function(share){
+			var isFile = share.type == 1 || share.type==2||share.type==3;
+			if(share.is_dir==1){%>
+			<li class="text-ellipsis"><a href="/share/<%= share.s_id %>"><i class="fa fa-<%= types[share.type]%>"></i><%= share.file_name %></a></li>
+		<%}else{%>
+			<li class="text-ellipsis file">
+				<a href="<%= isFile ? '/preview/'+share.u_id : share.type == 6 ?'javascript:void(0)' : share.key_original %>" class="<%= types[share.type]%>" data-type=<%= types[share.type]%>>
+					<i class="fa fa-<%= types[share.type]%>"></i>
+					<span><%= share.file_name %></span>	
+				</a>
+			</li>
+		<%}}) %>
+	</ul>
+	<div class="share-info" data-user="<%= item.user_id%>">
+		<div class="user"><a href="/user/<%= item.user_id%>"><img src="<%= item.s_avatar||user.s_avatar %>" width=20 height=20 alt="user avatar"><%= item.username||user.username %></a>
+			<div class="share-time"><%= new Date(item.share_time).toISOString().split('T')[0] %></div>
+		</div>
+		<div class="comments">
+			<a href="javascript:void(0)" class="like" data-like="<%= item.is_like %>"><i class="fa <%= item.is_like ? 'fa-heart':'fa-heart-o' %>"></i><a href="javascript:void(0)" class="comment"><i class="fa fa-comment"></i></a></a>
+			<a href="/share/<%= item.s_id %>" class="share-detail">详情</a>
+			<div class="comment-textarea">
+		        <div class="description">
+		        	<textarea name="comment" rows="2" placeholder="评论一下~"></textarea>
+		        </div>
+		        <div class="pull-right btn-comment">
+		            <a href="javascript:void(0);" class="btn btn-primary">评论</a>
+		        </div>
+				<ul class="comment-list"></ul>
+			</div>
+		</div>
+	</div>
+</li>

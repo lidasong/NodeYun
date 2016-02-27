@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="stylesheet" href="/public/libs/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/libs/font-awesome/css/font-awesome.min.css">
+    <% styles.forEach(function(style,index){ %>
+      <link rel="stylesheet" href="<%= style %>">
+    <% });%>
+    <base href="/">
+    <meta name="keywords" content="node,云存储,文件存储,在线文件管理,文件在线预览,nodeYun">
+    <meta name="description" content="文件管理平台提供文件存储,在线预览,文件分享,社区资源共享等功能">
+  </head>
+  <body>

@@ -1,0 +1,76 @@
+<div class="user-info">
+	<input type="hidden" value="<%= sessionUser.user_id %>" id="session-id"> 
+	<div class="edit-user">
+		<form action="" class="form-horizontal">
+			<div class="form-group">
+				<label for="username" class="col-sm-2 control-label">用户名</label>
+				<div class="col-sm-6">
+					<input type="text" id="username" class="form-control" name="username" value="<%= user.username %>">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="self-intro" class="col-sm-2 control-label">个人主页</label>
+				<div class="col-sm-6">
+					<input type="text" id="home-url" class="form-control" name="home_url" value="<%= user.home_url %>">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="self-intro" class="col-sm-2 control-label">个人简介</label>
+				<div class="col-sm-6">
+					<textarea type="text" id="self-intro" class="form-control" name="user_intro"><%= user.user_intro %></textarea>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="sex" class="col-sm-2 control-label">性别</label>
+				<div class="col-sm-4">
+					<label class="control-label">
+						<input type="radio" id="sex" name="sex" value="M" <%= user.sex=='M' ? "checked":"" %>>
+						男
+					</label>
+					<label class="control-label">
+						<input type="radio" id="sex" name="sex" value="F"  <%= user.sex=='F'?"checked":"" %>>
+						女
+					</label>
+			     	<button type="submit" class="btn btn-primary">保存</button>
+				</div>
+			</div>
+		</form>
+	</div>
+	<div class="avatar">
+		<img src="<%= user.b_avatar %>" alt="<%= user.username %>">
+		<% if(user.isHost){%>
+			<a href="javascript:void(0)" class="upload">
+				<i class="fa fa-edit"></i>
+				<input type="file" id="avatar" name="avatar" accept="image/*" title="上传头像">	
+			</a>
+		<%} %>
+	</div>
+	<div class="detail-info">
+		<div class="text-ellipsis">
+			<span class="username"><%= user.username %></span>	
+			<i class="fa sex <%= user.sex=='F'? 'fa-female':'fa-male' %>"></i>
+			<% if(!user.isHost){%>
+				<a href="javascript:void(0)" class="btn-follow btn btn-default" data-fid="<%= user.user_id %>" data-follow = "<%= user.isFollow? '1': '0' %>">
+					<span><%= user.isFollow? '取消关注': '关注' %></span>
+				</a>
+			<%} %>
+		</div>
+		<div class="text-ellipsis"><a href="<%= user.home_url %>" class="user-home"><%= user.home_url %></a></div>
+		<div class="user-intro"><%= user.user_intro %></div>
+		<% if(user.isHost){%>
+			<a href="javascript:void(0)" class="btn-edit-user"><i class="fa fa-edit fa-2x"></i></a>
+		<%} %>
+		<ul class="info-list">
+			<li>
+				<a href="/user/<%= user.user_id %>/share"><%= user.shareCount || 0 %>分享</a>
+			</li>
+			<li>
+				<a href="/user/<%= user.user_id %>/follower"><%= user.followerCount || 0 %>粉丝</a>
+			</li>
+			<li>
+				<a href="/user/<%= user.user_id %>/following"><%= user.followingCount || 0 %>关注</a>
+			</li>
+		</ul>
+	</div>
+	
+</div>

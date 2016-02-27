@@ -1,0 +1,9 @@
+<li class="answer-item" data-answer-id = "<%= answer.answer_id %>">
+	<div class="answerer">
+        <a href="javascript:void(0)" class="text-time">
+			<i class="fa fa-calendar"></i><%= new Date(answer.time).toLocaleDateString() %>
+		</a>
+        <a href="/user/<%= answer.answer_user_id %>"><strong><%= answer.username %></strong></a>
+    </div>
+    <div class="content"><span>回复: </span><%- decodeURIComponent(answer.content) %></div>
+</li>

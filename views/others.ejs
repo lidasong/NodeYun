@@ -1,0 +1,22 @@
+<% var title = '云-其他',styles=['/public/styles/css/others.css']%>
+
+<% include head %>
+<% include templates/header %>
+<% include templates/side %>
+<div class="container-fluid">
+	<input type="hidden" id="cloud-url" value="<%= cloudUrl %>">
+	<% include templates/banner %>
+	<% include templates/upload_modal %>
+	<ul class="files">
+		<% include templates/file_banner %>
+		
+		<% others.forEach(function(file,index){ %>
+			<% include templates/file_item %>
+		<% });%>
+	</ul>
+	<div class="tip-completed">已经加载完</div>
+	<div class="tip-share"></div>
+</div>
+<% var main='others' %>
+
+<% include foot %>

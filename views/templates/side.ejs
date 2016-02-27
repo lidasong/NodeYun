@@ -1,0 +1,18 @@
+<aside>
+	<ul>
+		<li class="active"><a href="/home/all"><i class="fa fa-share"></i>分享内容</a></li>
+		<li><a href="/user/<%= sessionUser.user_id %>/share"><i class="fa fa-share-alt"></i>我的分享</a></li>
+		<li><a href="/messages"><i class="fa fa-bell"></i>消息 <span class="<%= msgNum == 0 ? 'hidden' : '' %> badge"><%= msgNum>99 ? '99+' : msgNum %></span></a></li>
+		<li><a href="/content"><i class="fa fa-inbox"></i>网盘</a></li>
+		<li class="seperate"></li>
+		<li class="content">
+			<ul>
+				<li><a href="/content/images"><i class="fa fa-image"></i>我的图片</a></li>
+				<li><a href="/content/docs"><i class="fa fa-file-text"></i>我的文档</a></li>
+				<li><a href="/content/audios"><i class="fa fa-music"></i>我的音乐</a></li>
+				<li><a href="/content/videos"><i class="fa fa-video-camera"></i>我的视频</a></li>
+				<li><a href="/content/others"><i class="fa fa-file"></i>其他文件</a></li>
+			</ul>
+		</li>
+	</ul>
+</aside>

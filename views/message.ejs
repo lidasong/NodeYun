@@ -1,0 +1,63 @@
+<%  var title = '云-消息',
+    styles = ['/public/styles/css/message.css'],
+    msgTypes = {
+        0: '关注了你',
+        1: '评论了你的分享',
+        // 2: '回复了你'
+        2: '赞了你的分享'
+    },
+    followMsg = [],
+    commentMsg = [],
+    replyMsg = [];
+    messages.forEach(function(msg,index){
+    	switch(msg.type){
+    		case '0':
+    			followMsg.push(msg);
+    			break;
+    		case '1':
+    			commentMsg.push(msg);
+    			break;
+    		case '2':
+    			replyMsg.push(msg);
+    			break;
+    		default:
+    			break;
+    	}
+    });
+%>
+<% include head %>
+
+<% include templates/header %>
+
+<div class="container-fluid">
+	<div class="msg-banner">
+	</div>
+	<div>
+	    <ul class="nav nav-tabs" role="tablist">
+	        <li role="presentation" class="tab active" data-type="0" data-page="1"><a href="#follow" aria-controls="follow" role="tab" data-toggle="tab">关注信息<span class="badge"><%= msgNums[0]>99?'99+':msgNums[0] %></span></a></li>
+	        <li role="presentation" class="tab" data-type="1" data-page="1"><a href="#comment" aria-controls="comment" role="tab" data-toggle="tab">评论信息<span class="badge"><%= msgNums[1]>99?'99+':msgNums[1] %></span></a></li>
+            <li role="presentation" class="tab" data-type="2" data-page="1"><a href="#reply" aria-controls="reply" role="tab" data-toggle="tab">赞消息<span class="badge"><%= msgNums[2]>99?'99+':msgNums[2] %></span></a></li>
+	    </ul>
+	    <div class="tab-content">
+	        <div role="tabpanel" class="tab-pane active" id="follow">
+				<ul class="msgs">
+					<% include templates/message/follow %>
+				</ul>
+	        </div>
+	        <div role="tabpanel" class="tab-pane" id="comment">
+    			<ul class="msgs">
+					<% include templates/message/comment %>
+            	</ul>
+	        </div>
+	        <div role="tabpanel" class="tab-pane" id="reply">
+				<ul class="msgs">
+					<% include templates/message/reply %>
+	        	</ul>
+	        </div>
+	    </div>
+	</div>
+	<div class="tip-completed">已经加载完</div>
+</div>
+<% var main='messages' %>
+
+<% include foot %>

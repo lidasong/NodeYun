@@ -1,0 +1,21 @@
+<li>
+	<h2>
+		<i class="fa fa-calendar"></i>
+		<%= new Date(time).toISOString().slice(0,10) %>
+		<span>-</span>
+		<%= images[time].length %>张
+	</h2>
+	<ul class="imgs">
+		<% images[time].forEach(function(img,index){ %>
+			<%# include templates/img_item %>
+			<li class="image file" data-src="<%= img.key_original %>">
+				<input type="checkbox" name="select" value="<%= img.u_id %>" class="select" data-key="<%= img.key_original %>">
+				<a href="javascript:void(0);"><img src="<%= cloudUrl+img.key_original %>?imageView2/1/w/160/h/160" alt="">
+					<span class="hidden"><%= img.file_name %></span>
+				</a>
+			</li>
+		<% });%>
+	</ul>
+</li>
+
+	

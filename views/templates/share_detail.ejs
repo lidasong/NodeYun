@@ -1,0 +1,35 @@
+<% var types = {
+	0:'image',
+	1:'ppt',
+	2:'doc',
+	3:'pdf',
+	4:'audio',
+	5:'video',
+	6:'others',
+	7:'folder'
+},
+isFile = file.type == 1 || file.type==2||file.type==3,
+isFolder = file.type == 7;
+%>
+<li class="file row">
+	<div class="col-md-6 col-xs-6">
+		<div class="file-detail text-ellipsis">
+		<input type="checkbox" name="select" value="<%= file.u_id %>" class="select" data-key="<%= file.key_original %>">
+		<!-- 兼容firefox 将编辑按钮提前 (firefox float问题)-->
+			<a href="<%= isFile ? '/preview/'+ file.u_id : isFolder ? '/share/'+file.s_id +'/'+ file.u_id : file.key_original %>" class="<%= types[file.type]%>" data-type="<%= types[file.type]%>" data-src="<%= file.key_original %>">
+				<i class="fa fa-<%= types[file.type]%>"></i>
+				<span><%= file.file_name %></span> 
+			</a>
+		</div>
+	</div>
+	<div class="col-md-3 col-xs-3">
+		<a href="javascript:void(0)">
+			<%= isFolder ? '' : file.file_size/1000>=1000?(file.file_size/1000000).toFixed(1)+'MB':(file.file_size/1000).toFixed(1)+'KB' %>
+		</a>
+	</div>
+	<div class="col-md-3 col-xs-3 date">
+		<a href="javascript:void(0)">
+			<i class="fa fa-calendar"></i><%= new Date(file.mod_time).toISOString().split('T')[0] %>
+		</a>
+	</div>
+</li>

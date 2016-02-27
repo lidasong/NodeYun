@@ -1,0 +1,34 @@
+<% var title = '云-社区',
+	styles=['/public/styles/css/libs/markitup.css',
+		'/public/styles/css/libs/markitupset.css',
+		'/public/styles/css/community.css'
+]; %>
+<% include head %>
+
+<% include templates/header %>
+
+<% var isAll = type == 'all'; %>
+<div class="container">
+	<p class="main-title">
+        今天，你想要什么资源吗？
+        <a href="/community/demand" class="btn btn-primary">求资源</a>
+    </p>
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="tab <%= isAll ? 'active' : '' %>" data-type="0" data-page="1"><a href="<%= isAll ? '#all' : '/community' %>" aria-controls="all" role="tab" data-toggle="tab">所有的</a></li>
+        <li role="presentation" class="tab <%= isAll ? '' : 'active' %>" data-type="1" data-page="1"><a href="<%= isAll ? '/community/my' : '#my' %>" aria-controls="my" role="tab" data-toggle="tab">我的</a></li>
+    </ul>
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="<%= isAll ? 'all' : 'my' %>">
+			<ul class="communities">
+				<% communities.forEach(function(community,index){ %>
+					<% include templates/community %>
+				<% }); %>
+			</ul>
+        </div>
+    </div>
+	
+</div>
+<% var main='community' %>
+
+<% include foot %>
+

@@ -1,0 +1,28 @@
+<% var title = '云-首页',styles=['/public/styles/css/home.css','/public/styles/css/video-js.css']; %>
+<% include head %>
+
+<% include templates/iviewer %>
+
+<% include templates/header %>
+
+<% include templates/side %>
+<div class="container-fluid">
+	<input type="hidden" id="cloud-url" value="<%= cloudUrl %>">
+	<input type="hidden" id="type" value="<%= type %>">
+	<% include templates/share-title %>
+	
+	<div class="shares">
+		<ul class="share-list row files">
+		  <% shares.forEach(function(item){ %>
+			<% include templates/share-item %>
+		<% }); %>
+	</div>
+	<% include templates/audio_bar %>
+
+	<% include templates/video %>
+	<div class="tip-completed">已经加载完</div>
+</div>
+<div class="video-overlay"></div>
+<% var main='home' %>
+
+<% include foot %>

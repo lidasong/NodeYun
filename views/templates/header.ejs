@@ -1,0 +1,31 @@
+<header>
+    <input id="user-id" type="hidden" value="<%= sessionUser?sessionUser.user_id :''%>">
+    <div class="banner">
+        <div class="logo">
+            <i class="glyphicon glyphicon-cloud"></i>
+            <span class="node">N</span>
+        </div>
+        <div class="left-nav">
+            <ul>
+                <li><a href="/home" class="nav-item">主页</a></li>
+                <li><a href="/content" class="nav-item">网盘</a></li>
+                <li><a href="/community" class="nav-item">社区</a></li>
+                <!-- <li><a href="user/<%= sessionUser?sessionUser.user_id :''%>/share">分享</a></li> -->
+
+            </ul>
+        </div>
+        <% if(sessionUser){ %>
+            <div class="right">
+                <div class="user-nav dropdown">
+                    <a class="name" data-toggle="dropdown" href="/user" data-target="#">
+                        <span class="text-ellipsis"><%= sessionUser.username %></span><span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/user/<%= sessionUser.user_id %>/share">个人页面</a></li>
+                        <li><a href="/logout">退出登录</a></li>
+                    </ul>
+                </div>
+                <a href="/user/<%= sessionUser.user_id %>" class="avatar"><img src="<%= sessionUser.s_avatar+'/'+sessionUser.user_id %>" alt="avatar" width=40 height=40></a>
+            </div>
+        <% } %>
+    </div>
+</header>
