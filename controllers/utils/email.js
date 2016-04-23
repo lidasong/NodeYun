@@ -3,8 +3,8 @@ var _ = require('underscore');
 var EJS = require('ejs');
 var User = require('../../model/user.js').User;
 var serverConfig = {
-    user: "lidasong2014",
-    password: "868890",
+    user: "*******",//用户名
+    password: "*****",//密码
     host: "smtp.163.com",
     ssl: true
 };
@@ -15,7 +15,7 @@ var server = email.server.connect(serverConfig);
 
 var message = {
     text: "发送密码失败",
-    from: "lidasong2014@163.com",
+    from: "****@**.com",//邮箱
     to: "",
     cc: "",
     subject: "找回密码"
