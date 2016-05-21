@@ -12,8 +12,8 @@ var multer = require('multer');
 var qiniu = require('qiniu');
 
 var qiniu_config = {
-    AK: 'b4AlinZFNGDEbDOJkjKEJipeRuoeK95P5PaBpgfi',
-    SK: 'fRbAFpzyWHvQVNxo9D-kwwzcX6Iho5CFWQjx0uo_',
+    AK: 'b4AlinZFNGDEbD***********RuoeK95P5PaBpgfi',
+    SK: 'fRbAFpzyWHvQV************Iho5CFWQjx0uo_',
     bucket: 'sample',
     domain: 'http://7xoszw.com1.z0.glb.clouddn.com/'
 }
