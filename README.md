@@ -2,4 +2,4 @@
 
 ## 作用
 
-[!login](public/images/gitPics/login.png)
+![login](public/images/gitPics/login.png)
