@@ -64,7 +64,7 @@
     "express-session": "^1.11.3",
     "istanbul": "^0.3.17",
     "jade": "^1.11.0",
-    "log4js": "^0.6.38",
+    "log4js": "^6.4.0",
     "marked": "^0.4.0",
     "method-override": "^2.3.10",
     "mime": "^1.6.0",
